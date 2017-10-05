@@ -12,6 +12,12 @@ void manifesto(int posY){
  // println("there are " + lines.length + " lines");
 
   for (int ia = 0 ; ia < lines.length; ia++) {
-     text(lines[ia], posTextX, posY+(40+ia*20));
+    posRot= posY+(40+ia*20);
+    // text(lines[ia], posTextX, posRot);
+     if (posRot<400){
+     //text(".", posTextX, posRot);
+     } else {
+     text(lines[ia], posTextX, posRot);
+     }
    }
 }
