@@ -9,5 +9,7 @@ void keyPressed() {
     recording = false;
     videoExport.endMovie();
 
+  } else if (key == ESC){
+    parar = 0;
   }
 }

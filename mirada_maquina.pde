@@ -11,6 +11,7 @@ Capture video1; //WebCam2
 VideoExport videoExport; //Record
 // Declaración de variables
 boolean recording = false;
+int parar = 0;
 String fecha; //fecha
 float a = 0; // Angle for rotation
 float[] depthLookUp = new float[2048]; // We'll use a lookup table so that we don't have to repeat the math over and over
@@ -26,7 +27,7 @@ void setup() {
   // Texto
   f = createFont("Arial Narrow", 20);   // Create the font
   textFont(f);
-  posTextY = 30;  //Posición texto respecto a y
+  posTextY = 800;  //Posición texto respecto a y
   posTextX = 420;
   String[] lines = loadStrings("text.txt");
 
@@ -45,7 +46,7 @@ void setup() {
     } else {
     println("Available cameras:");
     for (int i = 0; i < cameras.length; i++) {
-      println(cameras[i]);
+      println(i+"--"+cameras[i]);
     }
 
   video = new Capture(this, cameras[1]);
@@ -69,6 +70,8 @@ void setup() {
 void draw() {
   background(0);
   texto();
+ 
+  
   //========= WebCam
   if (video.available()) {
     video.read();
