@@ -13,7 +13,6 @@ class PWindow extends PApplet {
   }
 
   void draw() {
-    ellipse(random(width), random(height), random(50), random(50));
   }
 
   void mousePressed() {

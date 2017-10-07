@@ -1,4 +1,4 @@
-import org.openkinect.freenect.*; //openkinect
+//import org.openkinect.freenect.*; //openkinect
 import org.openkinect.processing.*; //openkinect
 import processing.video.*; //video cámara
 import com.hamoid.*;  //export
@@ -13,6 +13,7 @@ VideoExport videoExport; //Record
 boolean recording = false;
 int parar = 0;
 String fecha; //fecha
+String fechaCap; //fecha Captura
 float a = 0; // Angle for rotation
 float[] depthLookUp = new float[2048]; // We'll use a lookup table so that we don't have to repeat the math over and over
 PFont f; //fuente de texto
@@ -22,7 +23,6 @@ int velocidad; //Velocidad de texto
 int posRot;
 
 void setup() {
-  
   win = new PWindow();
   // Texto
   f = createFont("Arial Narrow", 20);   // Create the font
@@ -81,8 +81,8 @@ void draw() {
   }
 
   // Configuración de los filtros de video
-  video.filter(THRESHOLD);
-  video1.filter(GRAY);
+  //video.filter(THRESHOLD);
+  //video1.filter(GRAY);
   // Posición y configuración del video como imagen
   image(video, 0, 0, 400, 300);
   image(video1, 0, 300, 400, 300);

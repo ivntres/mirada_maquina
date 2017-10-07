@@ -8,7 +8,7 @@ void kinect3D(){
   int skip = 4;
 
   // Translate and rotate
-  translate(800, 150, 0); //x = posición inicial, más la mitad, y a cálculo
+  translate(1000, 150, 0); //x = posición inicial, más la mitad, y a cálculo
  // rotateY(a);
 
   for (int x = 0; x < kinect.width; x += skip) {
