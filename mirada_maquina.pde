@@ -50,7 +50,7 @@ void setup() {
     }
 
   video = new Capture(this, cameras[1]);
-  video1 = new Capture(this, cameras[26]);
+  video1 = new Capture(this, cameras[1]);
   video.start();
   video1.start();
     }
