@@ -11,9 +11,11 @@ Capture video1; //WebCam2
 VideoExport videoExport; //Record
 // Declaración de variables
 boolean recording = false;
+int mensajeControlTexto;
 int parar = 0;
 String fecha; //fecha
 String fechaCap; //fecha Captura
+String mensajeControl; //Mensaje de control del monitor
 float a = 0; // Angle for rotation
 float[] depthLookUp = new float[2048]; // We'll use a lookup table so that we don't have to repeat the math over and over
 PFont f; //fuente de texto
@@ -21,6 +23,9 @@ int posTextY; //Posición de texto en Y
 int posTextX; //Posición de texto en X
 int velocidad; //Velocidad de texto
 int posRot;
+color colorControlCaja;
+color colorControlCaja2;
+color colorControlCaja3;
 
 void setup() {
   win = new PWindow();
