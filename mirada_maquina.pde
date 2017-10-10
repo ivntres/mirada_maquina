@@ -86,8 +86,8 @@ void draw() {
   }
 
   // Configuración de los filtros de video
-  //video.filter(THRESHOLD);
-  //video1.filter(GRAY);
+  video.filter(THRESHOLD);
+  video1.filter(GRAY);
   // Posición y configuración del video como imagen
   image(video, 0, 0, 400, 300);
   image(video1, 0, 300, 400, 300);
