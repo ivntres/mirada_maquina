@@ -23,6 +23,11 @@ void keyPressed() {
     colorControlCaja = color(255, 255, 255);
     colorControlCaja2 = color(255, 255, 255);
     colorControlCaja3 = color(0, 255, 0);
+  } else if (key == 'p'){
 
-  }
+    reset();
+  } else if(key == 'o'){
+    
+  } 
+  
 }
