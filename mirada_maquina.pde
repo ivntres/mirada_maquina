@@ -7,7 +7,9 @@ import com.hamoid.*;  //export
 PWindow win; //Objeto de ventana
 Kinect kinect; //Kinect
 Capture video; //WebCam1
-Capture video1; //WebCam2
+HVideo h1 = new HVideo(16,0);
+HVideo h2 = new HVideo(12,300);
+
 VideoExport videoExport; //Record
 // Declaración de variables
 boolean recording = false;
@@ -34,7 +36,6 @@ void setup() {
   textFont(f);
   posTextY = 800;  //Posición texto respecto a y
   posTextX = 420;
-  String[] lines = loadStrings("text.txt");
 
 
   // Video Export
@@ -42,23 +43,7 @@ void setup() {
   videoExport.setDebugging(false);
   
   
-// Cámaras Web 
-  String[] cameras = Capture.list();
-  
-  if (cameras.length == 0) {
-    println("There are no cameras available for capture.");
-    exit();
-    } else {
-    println("Available cameras:");
-    for (int i = 0; i < cameras.length; i++) {
-      println(i+"--"+cameras[i]);
-    }
-
-  video = new Capture(this, cameras[1]);
-  video1 = new Capture(this, cameras[26]);
-  video.start();
-  video1.start();
-    }
+  reset();
   
   // ========Kinect 3D==================
   
@@ -78,19 +63,12 @@ void draw() {
  
   
   //========= WebCam
-  if (video.available()) {
-    video.read();
-  }
-  if (video1.available()) {
-    video1.read();
-  }
+if (video.available()) {
+     video.read();
+    }
+    h1.clonar();
+    h2.clonar();
 
-  // Configuración de los filtros de video
-  //video.filter(THRESHOLD);
-  //video1.filter(GRAY);
-  // Posición y configuración del video como imagen
-  image(video, 0, 0, 400, 300);
-  image(video1, 0, 300, 400, 300);
   
   kinect3D(); //Llamada a función de kinect
   
